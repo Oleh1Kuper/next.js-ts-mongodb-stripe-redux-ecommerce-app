@@ -11,8 +11,8 @@ html {
   @apply absolute top-1/2 flex h-14 w-14 -translate-y-1/2 transform rounded-full bg-primary px-4 py-2 text-white;
 }
 
-.nav-btn {
-  @apply ml-4 flex rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700;
+.button {
+  @apply rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700;
 }
 
 .input {

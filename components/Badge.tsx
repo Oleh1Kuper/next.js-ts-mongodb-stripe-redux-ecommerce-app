@@ -25,8 +25,8 @@ const Badge = () => {
       {!cartItems.length || (
         <span
           className="absolute -right-2 -top-2 inline-flex h-6 w-6 items-center
-      justify-center rounded-full border-2 border-white bg-primary text-xs
-      font-bold text-white"
+          justify-center rounded-full border-2 border-white bg-primary text-xs
+          font-bold text-white"
         >
           {cartItems.length}
         </span>

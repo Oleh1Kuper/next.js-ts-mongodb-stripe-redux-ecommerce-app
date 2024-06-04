@@ -9,7 +9,7 @@ import ReacentGamesSection from '@/components/RecentGamesSection';
 const Home = () => {
   return (
     <>
-      <Hero />
+      <Hero isShownLink />
       <TrandingGames />
       <FeaturedSection />
       <CategorySection />

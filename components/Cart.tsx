@@ -9,6 +9,7 @@ import { IoCloseOutline } from 'react-icons/io5';
 import { getStripe } from '@/libs/stripe';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
+import Button from './Button';
 
 const Cart = () => {
   const { isShownCart, cartItems } = useAppSelector((state) => state.cart);
@@ -95,14 +96,13 @@ const Cart = () => {
             <span className="font-semibold">{`$${totalAmount}`}</span>
           </div>
 
-          <div className="px-4">
-            <button
-              type="button"
-              onClick={checkoutHandler}
-              className="mt-4 w-full rounded bg-blue-500 py-2 text-white hover:bg-blue-600"
+          <div className="px-4 mt-4">
+            <Button
+              handleClick={checkoutHandler}
+              className="w-full"
             >
               Checkout
-            </button>
+            </Button>
           </div>
         </>
       )}

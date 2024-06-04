@@ -2,17 +2,25 @@ import React from 'react';
 
 type Props = {
   children: React.ReactNode;
-  isDisable: boolean;
+  isDisable?: boolean;
   handleClick?: () => void;
+  className?: string;
+  type?: 'submit' | 'button';
 };
 
-const Button: React.FC<Props> = ({ children, isDisable, handleClick = () => {} }) => {
+const Button: React.FC<Props> = ({
+  children,
+  isDisable,
+  className,
+  type,
+  handleClick = () => {},
+}) => {
   return (
     <button
       onClick={handleClick}
-      type="button"
-      className={`rounded bg-blue-500 px-4 py-2 text-white
-      ${isDisable && 'cursor-not-allowed bg-gray-300'}`}
+      type={type ? 'submit' : 'button'}
+      className={`button ${className}
+      ${isDisable && 'cursor-not-allowed'}`}
       disabled={isDisable}
     >
       {children}

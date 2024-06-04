@@ -12,6 +12,9 @@ import { toast } from 'react-toastify';
 import { signIn } from 'next-auth/react';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 import { FcGoogle } from 'react-icons/fc';
+import Label from './Label';
+import Input from './Input';
+import Button from './Button';
 
 type FormData = z.infer<typeof schema>;
 
@@ -116,20 +119,8 @@ const Form = () => {
           </button>
 
           <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="mb-2 block text-sm font-bold text-gray-700"
-            >
-              Email
-            </label>
-
-            <input
-              type="email"
-              className="input"
-              id="email"
-              placeholder="Enter your email"
-              {...register('email')}
-            />
+            <Label htmlFor="email">Email</Label>
+            <Input register={{ ...register('email') }} type="email" />
             {errors.email?.message && (
               <span className="block text-xs text-red-500">
                 {errors.email.message}
@@ -138,20 +129,8 @@ const Form = () => {
           </div>
 
           <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="mb-2 block text-sm font-bold text-gray-700"
-            >
-              Password
-            </label>
-
-            <input
-              type="password"
-              className="input"
-              id="password"
-              placeholder="Enter your Password"
-              {...register('password')}
-            />
+            <Label htmlFor="password">Password</Label>
+            <Input register={{ ...register('password') }} type="password" />
             {errors.password?.message && (
               <span className="block text-xs text-red-500">
                 {errors.password.message}
@@ -160,9 +139,9 @@ const Form = () => {
           </div>
 
           <div className="">
-            <button className="nav-btn m-0 w-full" type="submit">
+            <Button type="submit" className="w-full">
               {isLoad ? 'Loading...' : isLogin ? 'Login' : 'Create account'}
-            </button>
+            </Button>
             <button
               onClick={handleClick}
               className="mt-3 text-gray-900 underline underline-offset-1"

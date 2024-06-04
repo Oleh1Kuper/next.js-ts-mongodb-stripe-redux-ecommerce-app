@@ -11,7 +11,7 @@ const Hero: React.FC<Props> = ({ isShownLink }) => {
     <section className="px-6 py-40 sm:px-12 md:px-20 lg:px-36">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8">
         <div className="mx-auto flex max-w-md flex-col justify-center lg:col-start-1 lg:col-end-2 lg:mx-0 lg:max-w-none">
-          <h1 className="text-primary-dark mb-3 text-xl font-bold tracking-tight md:text-2xl lg:text-3xl">
+          <h1 className="mb-3 text-xl font-bold tracking-tight text-primary-dark md:text-2xl lg:text-3xl">
             Gaming
           </h1>
           <p className="text-5xl font-bold leading-[120%] text-white md:text-5xl md:leading-[155%]">
@@ -21,13 +21,10 @@ const Hero: React.FC<Props> = ({ isShownLink }) => {
             Discover, Learn, and Conquer with our extensive collection of games
           </p>
 
-          {!isShownLink && (
+          {isShownLink && (
             <div className="mt-8 rounded sm:mt-10">
               <Link
-                className="bg-primary hover:bg-primary-dark
-              mt-8 inline-flex items-center rounded-[40px]
-              border border-transparent px-6 py-3 text-base font-medium
-              text-white shadow-sm sm:mt-10 sm:px-8"
+                className="rounded-md bg-primary px-6 py-2 text-white hover:bg-primary-dark"
                 href="#recent-games"
               >
                 Find games
